@@ -25,6 +25,10 @@
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
+        "express-jwt": "^8.4.1",
+        "helmet": "^6.0.1",
+        "jwks-rsa": "^3.0.1",
+        "loglevel": "^1.8.1",
         "mongodb": "^5.0.0",
         "mongoose": "^6.9.0",
         "standard": "^17.0.0"
