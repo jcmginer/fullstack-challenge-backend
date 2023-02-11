@@ -24,9 +24,6 @@ const createGifFile = async (req, res) => {
     try {
         const gifFile = new GifFile({ ...body });
 
-
-
-
         if (req.files?.image) {
             const result = await uploadImage(req.files.image.tempFilePath)
             gifFile.image = {
@@ -36,14 +33,7 @@ const createGifFile = async (req, res) => {
             console.log(result)
 
             await FileSystem.unlink(req.files.image.tempFilePath)
-
-
         }
-
-
-
-
-
 
         await gifFile.save();
         res.json(201).json({ message: 'Successfully created gif', data: gifFile });
@@ -51,7 +41,6 @@ const createGifFile = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
-
 
 const deleteGifFile = async (req, res) => {
 

@@ -30,15 +30,10 @@ const checkUser = (req, res) => {
 
 const createUser = (req, res) => {
     try {
-        // recogemos los params del body
         let params = req.body;
 
-        // validamos datos (con la funcion que tenemos en la carpeta helper)
-
-        // Creamos el objeto a guardar
         const $user = new User(params)
 
-        // guardar el articulo en la ddbb
         $user.save((error, data) => {
             if (error || !data) {
                 return res.status(400).json({
@@ -46,7 +41,6 @@ const createUser = (req, res) => {
                     mensaje: "No se ha guardado el post"
                 })
             }
-            //devolver el post
             return res.status(200).json({
                 status: "success",
                 info: data,
@@ -62,11 +56,6 @@ const createUser = (req, res) => {
     }
 }
 
-
-
-
-
-// Export
 module.exports = {
     checkUser,
     createUser

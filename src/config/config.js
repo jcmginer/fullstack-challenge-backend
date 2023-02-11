@@ -1,7 +1,6 @@
 const dotenv = require('dotenv')
 const logger = require('loglevel')
 
-
 dotenv.config()
 
 logger.enableAll()
